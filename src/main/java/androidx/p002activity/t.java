@@ -1,0 +1,5 @@
+package androidx.p002activity;
+
+/* JADX INFO: loaded from: classes.dex */
+public final /* synthetic */ class t {
+}

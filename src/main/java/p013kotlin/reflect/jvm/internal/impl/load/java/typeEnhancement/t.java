@@ -1,0 +1,23 @@
+package p013kotlin.reflect.jvm.internal.impl.load.java.typeEnhancement;
+
+import wn0.l;
+
+/* JADX INFO: loaded from: classes9.dex */
+class t implements l {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    private final String f87501a;
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    private final String f87502b;
+
+    public t(String str, String str2) {
+        this.f87501a = str;
+        this.f87502b = str2;
+    }
+
+    @Override // wn0.l
+    public Object invoke(Object obj) {
+        return PredefinedEnhancementInfoKt.s(this.f87501a, this.f87502b, (SignatureEnhancementBuilder.ClassEnhancementBuilder.FunctionEnhancementBuilder) obj);
+    }
+}

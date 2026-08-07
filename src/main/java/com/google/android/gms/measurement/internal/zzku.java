@@ -1,0 +1,27 @@
+package com.google.android.gms.measurement.internal;
+
+import java.util.Objects;
+
+/* JADX INFO: loaded from: classes5.dex */
+final class zzku implements Runnable {
+    final /* synthetic */ zzjl zza;
+    final /* synthetic */ long zzb;
+    final /* synthetic */ boolean zzc;
+    final /* synthetic */ zzlj zzd;
+
+    zzku(zzlj zzljVar, zzjl zzjlVar, long j11, boolean z11) {
+        this.zza = zzjlVar;
+        this.zzb = j11;
+        this.zzc = z11;
+        Objects.requireNonNull(zzljVar);
+        this.zzd = zzljVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzlj zzljVar = this.zzd;
+        zzjl zzjlVar = this.zza;
+        zzljVar.zzA(zzjlVar);
+        zzljVar.zzak(zzjlVar, this.zzb, true, this.zzc);
+    }
+}

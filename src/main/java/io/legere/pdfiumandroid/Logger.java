@@ -1,0 +1,38 @@
+package io.legere.pdfiumandroid;
+
+import ch.qos.logback.core.rolling.helper.DateTokenConverter;
+import p013kotlin.Metadata;
+import p013kotlin.jvm.internal.s;
+
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0003\n\u0002\b\b\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J!\u0010\b\u001a\u00020\u00072\u0006\u0010\u0005\u001a\u00020\u00042\b\u0010\u0006\u001a\u0004\u0018\u00010\u0004H\u0016¢\u0006\u0004\b\b\u0010\tJ+\u0010\f\u001a\u00020\u00072\u0006\u0010\u0005\u001a\u00020\u00042\b\u0010\u000b\u001a\u0004\u0018\u00010\n2\b\u0010\u0006\u001a\u0004\u0018\u00010\u0004H\u0016¢\u0006\u0004\b\f\u0010\rJ\u0015\u0010\u000f\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u00020\u0001¢\u0006\u0004\b\u000f\u0010\u0010R\u0018\u0010\u000e\u001a\u0004\u0018\u00010\u00018\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b\u000e\u0010\u0011¨\u0006\u0012"}, d2 = {"Lio/legere/pdfiumandroid/Logger;", "Lio/legere/pdfiumandroid/LoggerInterface;", "<init>", "()V", "", "tag", "message", "Ljn0/h0;", DateTokenConverter.CONVERTER_KEY, "(Ljava/lang/String;Ljava/lang/String;)V", "", "t", "e", "(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;)V", "logger", "setLogger", "(Lio/legere/pdfiumandroid/LoggerInterface;)V", "Lio/legere/pdfiumandroid/LoggerInterface;", "pdfiumandroid_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+public final class Logger implements LoggerInterface {
+    public static final Logger INSTANCE = new Logger();
+    private static LoggerInterface logger;
+
+    private Logger() {
+    }
+
+    @Override // io.legere.pdfiumandroid.LoggerInterface
+    public void d(String tag, String message) {
+        s.k(tag, "tag");
+        LoggerInterface loggerInterface = logger;
+        if (loggerInterface != null) {
+            loggerInterface.d(tag, message);
+        }
+    }
+
+    @Override // io.legere.pdfiumandroid.LoggerInterface
+    public void e(String tag, Throwable t11, String message) {
+        s.k(tag, "tag");
+        LoggerInterface loggerInterface = logger;
+        if (loggerInterface != null) {
+            loggerInterface.e(tag, t11, message);
+        }
+    }
+
+    public final void setLogger(LoggerInterface logger2) {
+        s.k(logger2, "logger");
+        logger = logger2;
+    }
+}

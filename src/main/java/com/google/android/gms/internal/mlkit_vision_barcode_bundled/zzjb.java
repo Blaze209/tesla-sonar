@@ -1,0 +1,40 @@
+package com.google.android.gms.internal.mlkit_vision_barcode_bundled;
+
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzjb extends zzeh implements zzfn {
+    private static final zzjb zzb;
+    private int zzd;
+    private String zze = "";
+    private zzjh zzf;
+
+    static {
+        zzjb zzjbVar = new zzjb();
+        zzb = zzjbVar;
+        zzeh.zzV(zzjb.class, zzjbVar);
+    }
+
+    private zzjb() {
+    }
+
+    @Override // com.google.android.gms.internal.mlkit_vision_barcode_bundled.zzeh
+    protected final Object zzg(int i11, Object obj, Object obj2) {
+        int i12 = i11 - 1;
+        if (i12 == 0) {
+            return (byte) 1;
+        }
+        if (i12 == 2) {
+            return zzeh.zzS(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဉ\u0001", new Object[]{"zzd", "zze", "zzf"});
+        }
+        if (i12 == 3) {
+            return new zzjb();
+        }
+        zzhi zzhiVar = null;
+        if (i12 == 4) {
+            return new zzja(zzhiVar);
+        }
+        if (i12 != 5) {
+            return null;
+        }
+        return zzb;
+    }
+}

@@ -1,0 +1,104 @@
+package b70;
+
+import androidx.p002activity.result.ActivityResultCallback;
+import androidx.p002activity.result.ActivityResultLauncher;
+import ch.qos.logback.core.rolling.helper.DateTokenConverter;
+import com.stripe.android.payments.bankaccount.navigation.CollectBankAccountContract;
+import jn0.h0;
+import jn0.q;
+import p013kotlin.Metadata;
+import p013kotlin.jvm.internal.DefaultConstructorMarker;
+import p013kotlin.jvm.internal.s;
+import wn0.l;
+
+/* JADX INFO: loaded from: classes7.dex */
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u000b\b\u0007\u0018\u0000 \u000f2\u00020\u0001:\u0001\u001cB\u001f\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00030\u0002\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0007\u0010\bJ1\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\u00052\b\u0010\n\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u000b\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\fH\u0016¢\u0006\u0004\b\u000f\u0010\u0010J1\u0010\u0011\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\u00052\b\u0010\n\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u000b\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\fH\u0016¢\u0006\u0004\b\u0011\u0010\u0010JY\u0010\u0018\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\u00052\b\u0010\n\u001a\u0004\u0018\u00010\u00052\u0006\u0010\r\u001a\u00020\f2\u0006\u0010\u0012\u001a\u00020\u00052\b\u0010\u0013\u001a\u0004\u0018\u00010\u00052\b\u0010\u0014\u001a\u0004\u0018\u00010\u00052\b\u0010\u0016\u001a\u0004\u0018\u00010\u00152\b\u0010\u0017\u001a\u0004\u0018\u00010\u0005H\u0016¢\u0006\u0004\b\u0018\u0010\u0019JE\u0010\u001a\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\u00052\b\u0010\n\u001a\u0004\u0018\u00010\u00052\u0006\u0010\r\u001a\u00020\f2\u0006\u0010\u0012\u001a\u00020\u00052\b\u0010\u0013\u001a\u0004\u0018\u00010\u00052\b\u0010\u0014\u001a\u0004\u0018\u00010\u0005H\u0016¢\u0006\u0004\b\u001a\u0010\u001bJ\u000f\u0010\u001c\u001a\u00020\u000eH\u0016¢\u0006\u0004\b\u001c\u0010\u001dR\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00030\u00028\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u0011\u0010\u001eR\u0016\u0010\u0006\u001a\u0004\u0018\u00010\u00058\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u0018\u0010\u001f¨\u0006 "}, d2 = {"Lb70/d;", "Lb70/f;", "Landroidx/activity/result/ActivityResultLauncher;", "Lcom/stripe/android/payments/bankaccount/navigation/CollectBankAccountContract$a;", "hostActivityLauncher", "", "hostedSurface", "<init>", "(Landroidx/activity/result/ActivityResultLauncher;Ljava/lang/String;)V", "publishableKey", "stripeAccountId", "clientSecret", "Lb70/a;", "configuration", "Ljn0/h0;", DateTokenConverter.CONVERTER_KEY, "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lb70/a;)V", "b", "elementsSessionId", "customerId", "onBehalfOf", "", "amount", "currency", "c", "(Ljava/lang/String;Ljava/lang/String;Lb70/a;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)V", "e", "(Ljava/lang/String;Ljava/lang/String;Lb70/a;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "a", "()V", "Landroidx/activity/result/ActivityResultLauncher;", "Ljava/lang/String;", "payments-core_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+public final class d implements f {
+
+    /* JADX INFO: renamed from: d, reason: collision with root package name and from kotlin metadata */
+    public static final Companion INSTANCE = new Companion(null);
+
+    /* JADX INFO: renamed from: e, reason: collision with root package name */
+    public static final int f16785e = 8;
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
+    private final ActivityResultLauncher<CollectBankAccountContract.a> hostActivityLauncher;
+
+    /* JADX INFO: renamed from: c, reason: collision with root package name and from kotlin metadata */
+    private final String hostedSurface;
+
+    /* JADX INFO: renamed from: b70.d$a, reason: from kotlin metadata */
+    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0087\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J3\u0010\r\u001a\u00020\f2\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\u00062\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\bH\u0007¢\u0006\u0004\b\r\u0010\u000eR\u0014\u0010\u000f\u001a\u00020\u00048\u0002X\u0082T¢\u0006\u0006\n\u0004\b\u000f\u0010\u0010¨\u0006\u0011"}, d2 = {"Lb70/d$a;", "", "<init>", "()V", "", "hostedSurface", "Lh/d;", "activityResultRegistryOwner", "Lkotlin/Function1;", "Lcom/stripe/android/payments/bankaccount/navigation/a;", "Ljn0/h0;", "callback", "Lb70/f;", "b", "(Ljava/lang/String;Lh/d;Lwn0/l;)Lb70/f;", "LAUNCHER_KEY", "Ljava/lang/String;", "payments-core_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final void c(l callback, com.stripe.android.payments.bankaccount.navigation.e eVar) {
+            s.k(callback, "$callback");
+            s.h(eVar);
+            callback.invoke(com.stripe.android.payments.bankaccount.navigation.b.a(eVar));
+        }
+
+        public final f b(String hostedSurface, h.d activityResultRegistryOwner, final l<? super com.stripe.android.payments.bankaccount.navigation.a, h0> callback) {
+            s.k(hostedSurface, "hostedSurface");
+            s.k(activityResultRegistryOwner, "activityResultRegistryOwner");
+            s.k(callback, "callback");
+            ActivityResultLauncher activityResultLauncherL = activityResultRegistryOwner.getActivityResultRegistry().l("CollectBankAccountForInstantDebitsLauncher", new CollectBankAccountContract(), new ActivityResultCallback() { // from class: b70.c
+                @Override // androidx.p002activity.result.ActivityResultCallback
+                public final void onActivityResult(Object obj) {
+                    d.Companion.c(callback, (com.stripe.android.payments.bankaccount.navigation.e) obj);
+                }
+            });
+            s.h(activityResultLauncherL);
+            return new d(activityResultLauncherL, hostedSurface);
+        }
+
+        private Companion() {
+        }
+    }
+
+    public d(ActivityResultLauncher<CollectBankAccountContract.a> hostActivityLauncher, String str) {
+        s.k(hostActivityLauncher, "hostActivityLauncher");
+        this.hostActivityLauncher = hostActivityLauncher;
+        this.hostedSurface = str;
+    }
+
+    @Override // b70.f
+    public void a() {
+        this.hostActivityLauncher.d();
+    }
+
+    @Override // b70.f
+    public void b(String publishableKey, String stripeAccountId, String clientSecret, a configuration) {
+        s.k(publishableKey, "publishableKey");
+        s.k(clientSecret, "clientSecret");
+        s.k(configuration, "configuration");
+        this.hostActivityLauncher.b(new CollectBankAccountContract.a.ForSetupIntent(publishableKey, stripeAccountId, clientSecret, configuration, true, this.hostedSurface));
+    }
+
+    @Override // b70.f
+    public void c(String publishableKey, String stripeAccountId, a configuration, String elementsSessionId, String customerId, String onBehalfOf, Integer amount, String currency) {
+        s.k(publishableKey, "publishableKey");
+        s.k(configuration, "configuration");
+        s.k(elementsSessionId, "elementsSessionId");
+        throw new q("An operation is not implemented: Instant Debits do not support deferred payments yet");
+    }
+
+    @Override // b70.f
+    public void d(String publishableKey, String stripeAccountId, String clientSecret, a configuration) {
+        s.k(publishableKey, "publishableKey");
+        s.k(clientSecret, "clientSecret");
+        s.k(configuration, "configuration");
+        this.hostActivityLauncher.b(new CollectBankAccountContract.a.ForPaymentIntent(publishableKey, stripeAccountId, clientSecret, configuration, true, this.hostedSurface));
+    }
+
+    @Override // b70.f
+    public void e(String publishableKey, String stripeAccountId, a configuration, String elementsSessionId, String customerId, String onBehalfOf) {
+        s.k(publishableKey, "publishableKey");
+        s.k(configuration, "configuration");
+        s.k(elementsSessionId, "elementsSessionId");
+        throw new q("An operation is not implemented: Instant Debits do not support deferred payments yet");
+    }
+}

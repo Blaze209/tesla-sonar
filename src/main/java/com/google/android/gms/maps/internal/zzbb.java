@@ -1,0 +1,9 @@
+package com.google.android.gms.maps.internal;
+
+import android.location.Location;
+import android.os.IInterface;
+
+/* JADX INFO: loaded from: classes5.dex */
+public interface zzbb extends IInterface {
+    void zzb(Location location);
+}

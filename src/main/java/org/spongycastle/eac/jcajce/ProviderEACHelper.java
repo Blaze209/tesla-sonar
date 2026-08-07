@@ -1,0 +1,18 @@
+package org.spongycastle.eac.jcajce;
+
+import java.security.KeyFactory;
+import java.security.Provider;
+
+/* JADX INFO: loaded from: classes10.dex */
+class ProviderEACHelper implements EACHelper {
+    private final Provider provider;
+
+    ProviderEACHelper(Provider provider) {
+        this.provider = provider;
+    }
+
+    @Override // org.spongycastle.eac.jcajce.EACHelper
+    public KeyFactory createKeyFactory(String str) {
+        return KeyFactory.getInstance(str, this.provider);
+    }
+}

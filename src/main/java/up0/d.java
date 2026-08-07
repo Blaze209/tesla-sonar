@@ -1,0 +1,66 @@
+package up0;
+
+import java.util.List;
+import p013kotlin.Metadata;
+import p013kotlin.jvm.internal.u;
+import wn0.p;
+
+/* JADX INFO: loaded from: classes9.dex */
+@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0005\bÀ\u0002\u0018\u00002\u00020\u00012\u00020\u0002B\t\b\u0002¢\u0006\u0004\b\u0003\u0010\u0004J#\u0010\b\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\u0005H\u0016¢\u0006\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lup0/d;", "Ljp0/b;", "Lup0/e;", "<init>", "()V", "", "expression", "data", "f", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", "core"}, k = 1, mv = {1, 8, 0}, xi = 48)
+public final class d implements jp0.b, e {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    public static final d f116506a = new d();
+
+    @Metadata(d1 = {"\u0000\u0010\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0001\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0000H\n¢\u0006\u0004\b\u0004\u0010\u0005"}, d2 = {"", "first", "second", "", "a", "(II)Ljava/lang/Boolean;"}, k = 3, mv = {1, 8, 0})
+    static final class a extends u implements p<Integer, Integer, Boolean> {
+
+        /* JADX INFO: renamed from: c, reason: collision with root package name */
+        public static final a f116507c = new a();
+
+        a() {
+            super(2);
+        }
+
+        public final Boolean a(int i11, int i12) {
+            return Boolean.valueOf(i11 <= i12);
+        }
+
+        @Override // wn0.p
+        public /* bridge */ /* synthetic */ Boolean invoke(Integer num, Integer num2) {
+            return a(num.intValue(), num2.intValue());
+        }
+    }
+
+    private d() {
+    }
+
+    @Override // kp0.a
+    public Boolean b(Object obj) {
+        return e.a.f(this, obj);
+    }
+
+    @Override // kp0.b
+    public List<Comparable<?>> c(Comparable<?> comparable, Comparable<?> comparable2) {
+        return e.a.e(this, comparable, comparable2);
+    }
+
+    public boolean d(List<? extends Object> list, p<? super Integer, ? super Integer, Boolean> pVar) {
+        return e.a.c(this, list, pVar);
+    }
+
+    @Override // kp0.b
+    public List<Comparable<?>> e(Comparable<?> comparable, Comparable<?> comparable2) {
+        return e.a.d(this, comparable, comparable2);
+    }
+
+    @Override // jp0.b
+    public Object f(Object expression, Object data) {
+        return Boolean.valueOf(d(yr0.a.c(expression), a.f116507c));
+    }
+
+    @Override // kp0.c
+    public boolean g(List<? extends Object> list, p<? super Integer, ? super Integer, Boolean> pVar) {
+        return e.a.b(this, list, pVar);
+    }
+}

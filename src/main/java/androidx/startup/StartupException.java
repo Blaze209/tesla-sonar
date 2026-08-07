@@ -1,0 +1,14 @@
+package androidx.startup;
+
+import androidx.annotation.NonNull;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class StartupException extends RuntimeException {
+    public StartupException(@NonNull String str) {
+        super(str);
+    }
+
+    public StartupException(@NonNull Throwable th2) {
+        super(th2);
+    }
+}

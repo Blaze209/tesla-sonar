@@ -1,0 +1,15 @@
+package com.google.android.gms.nearby.messages.internal;
+
+import android.os.IBinder;
+
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzw extends com.google.android.gms.internal.nearby.zza implements zzy {
+    zzw(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.nearby.messages.internal.IStatusCallback");
+    }
+
+    @Override // com.google.android.gms.nearby.messages.internal.zzy
+    public final void zzd(boolean z11) {
+        throw null;
+    }
+}

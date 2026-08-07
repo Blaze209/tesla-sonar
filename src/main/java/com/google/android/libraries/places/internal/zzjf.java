@@ -1,0 +1,19 @@
+package com.google.android.libraries.places.internal;
+
+import java.util.ListIterator;
+
+/* JADX INFO: loaded from: classes5.dex */
+final class zzjf extends zzju {
+    final /* synthetic */ zzjg zza;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzjf(zzjg zzjgVar, ListIterator listIterator) {
+        super(listIterator);
+        this.zza = zzjgVar;
+    }
+
+    @Override // com.google.android.libraries.places.internal.zzjt
+    final Object zza(Object obj) {
+        return ((zzcf) obj).toString();
+    }
+}

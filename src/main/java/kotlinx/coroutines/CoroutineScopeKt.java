@@ -1,0 +1,92 @@
+package kotlinx.coroutines;
+
+import ch.qos.logback.core.CoreConstants;
+import java.util.concurrent.CancellationException;
+import kotlinx.coroutines.internal.ScopeCoroutine;
+import kotlinx.coroutines.intrinsics.UndispatchedKt;
+import p013kotlin.Metadata;
+import p013kotlin.coroutines.Continuation;
+import p013kotlin.coroutines.CoroutineContext;
+import p013kotlin.coroutines.intrinsics.IntrinsicsKt;
+import p013kotlin.coroutines.jvm.internal.DebugProbesKt;
+import p013kotlin.jvm.internal.q;
+import wn0.p;
+
+/* JADX INFO: loaded from: classes9.dex */
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0004\u001a\u001c\u0010\u0003\u001a\u00020\u0000*\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0001H\u0086\u0002¢\u0006\u0004\b\u0003\u0010\u0004\u001a\r\u0010\u0005\u001a\u00020\u0000¢\u0006\u0004\b\u0005\u0010\u0006\u001aG\u0010\f\u001a\u00028\u0000\"\u0004\b\u0000\u0010\u00072\"\u0010\u000b\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u0000\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\t\u0012\u0006\u0012\u0004\u0018\u00010\n0\bH\u0086@\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0001¢\u0006\u0004\b\f\u0010\r\u001a\u0015\u0010\u000e\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0001¢\u0006\u0004\b\u000e\u0010\u000f\u001a#\u0010\u0014\u001a\u00020\u0013*\u00020\u00002\u0010\b\u0002\u0010\u0012\u001a\n\u0018\u00010\u0010j\u0004\u0018\u0001`\u0011¢\u0006\u0004\b\u0014\u0010\u0015\u001a%\u0010\u0014\u001a\u00020\u0013*\u00020\u00002\u0006\u0010\u0017\u001a\u00020\u00162\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u0018¢\u0006\u0004\b\u0014\u0010\u0019\u001a\u0011\u0010\u001a\u001a\u00020\u0013*\u00020\u0000¢\u0006\u0004\b\u001a\u0010\u001b\u001a\u0010\u0010\u001c\u001a\u00020\u0001H\u0086H¢\u0006\u0004\b\u001c\u0010\u001d\"\u001b\u0010\u001f\u001a\u00020\u001e*\u00020\u00008F¢\u0006\f\u0012\u0004\b!\u0010\u001b\u001a\u0004\b\u001f\u0010 ¨\u0006\""}, d2 = {"Lkotlinx/coroutines/CoroutineScope;", "Lkotlin/coroutines/CoroutineContext;", CoreConstants.CONTEXT_SCOPE_VALUE, "plus", "(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;", "MainScope", "()Lkotlinx/coroutines/CoroutineScope;", "R", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "block", "coroutineScope", "(Lwn0/p;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "CoroutineScope", "(Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;", "Ljava/util/concurrent/CancellationException;", "Lkotlinx/coroutines/CancellationException;", "cause", "Ljn0/h0;", "cancel", "(Lkotlinx/coroutines/CoroutineScope;Ljava/util/concurrent/CancellationException;)V", "", "message", "", "(Lkotlinx/coroutines/CoroutineScope;Ljava/lang/String;Ljava/lang/Throwable;)V", "ensureActive", "(Lkotlinx/coroutines/CoroutineScope;)V", "currentCoroutineContext", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "", "isActive", "(Lkotlinx/coroutines/CoroutineScope;)Z", "isActive$annotations", "kotlinx-coroutines-core"}, k = 2, mv = {2, 1, 0}, xi = 48)
+public final class CoroutineScopeKt {
+    public static final CoroutineScope CoroutineScope(CoroutineContext coroutineContext) {
+        if (coroutineContext.get(Job.INSTANCE) == null) {
+            coroutineContext = coroutineContext.plus(JobKt__JobKt.Job$default((Job) null, 1, (Object) null));
+        }
+        return new kotlinx.coroutines.internal.CoroutineScope(coroutineContext);
+    }
+
+    public static final CoroutineScope MainScope() {
+        return new kotlinx.coroutines.internal.CoroutineScope(SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null).plus(Dispatchers.getMain()));
+    }
+
+    public static final void cancel(CoroutineScope coroutineScope, CancellationException cancellationException) {
+        Job job = (Job) coroutineScope.getCoroutineContext().get(Job.INSTANCE);
+        if (job != null) {
+            job.cancel(cancellationException);
+            return;
+        }
+        throw new IllegalStateException(("Scope cannot be cancelled because it does not have a job: " + coroutineScope).toString());
+    }
+
+    public static /* synthetic */ void cancel$default(CoroutineScope coroutineScope, CancellationException cancellationException, int i11, Object obj) {
+        if ((i11 & 1) != 0) {
+            cancellationException = null;
+        }
+        cancel(coroutineScope, cancellationException);
+    }
+
+    public static final <R> Object coroutineScope(p<? super CoroutineScope, ? super Continuation<? super R>, ? extends Object> pVar, Continuation<? super R> continuation) {
+        ScopeCoroutine scopeCoroutine = new ScopeCoroutine(continuation.getContext(), continuation);
+        Object objStartUndispatchedOrReturn = UndispatchedKt.startUndispatchedOrReturn(scopeCoroutine, scopeCoroutine, pVar);
+        if (objStartUndispatchedOrReturn == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
+            DebugProbesKt.probeCoroutineSuspended(continuation);
+        }
+        return objStartUndispatchedOrReturn;
+    }
+
+    public static final Object currentCoroutineContext(Continuation<? super CoroutineContext> continuation) {
+        return continuation.getContext();
+    }
+
+    private static final Object currentCoroutineContext$$forInline(Continuation<? super CoroutineContext> continuation) {
+        q.c(3);
+        throw null;
+    }
+
+    public static final void ensureActive(CoroutineScope coroutineScope) {
+        JobKt.ensureActive(coroutineScope.getCoroutineContext());
+    }
+
+    public static final boolean isActive(CoroutineScope coroutineScope) {
+        Job job = (Job) coroutineScope.getCoroutineContext().get(Job.INSTANCE);
+        if (job != null) {
+            return job.isActive();
+        }
+        return true;
+    }
+
+    public static /* synthetic */ void isActive$annotations(CoroutineScope coroutineScope) {
+    }
+
+    public static final CoroutineScope plus(CoroutineScope coroutineScope, CoroutineContext coroutineContext) {
+        return new kotlinx.coroutines.internal.CoroutineScope(coroutineScope.getCoroutineContext().plus(coroutineContext));
+    }
+
+    public static /* synthetic */ void cancel$default(CoroutineScope coroutineScope, String str, Throwable th2, int i11, Object obj) {
+        if ((i11 & 2) != 0) {
+            th2 = null;
+        }
+        cancel(coroutineScope, str, th2);
+    }
+
+    public static final void cancel(CoroutineScope coroutineScope, String str, Throwable th2) {
+        cancel(coroutineScope, ExceptionsKt.CancellationException(str, th2));
+    }
+}

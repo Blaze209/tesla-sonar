@@ -1,0 +1,11 @@
+package com.google.android.gms.nearby.fastpair;
+
+import com.google.android.gms.common.api.CommonStatusCodes;
+
+/* JADX INFO: loaded from: classes5.dex */
+public class FastPairStatusCodes extends CommonStatusCodes {
+    public static final int FAILED_INVALID_ARGUMENTS = 40502;
+    public static final int FAILED_NOT_SUPPORTED = 40504;
+    public static final int FAILED_PERMISSION_DENIED = 40503;
+    public static final int SUCCESS = 0;
+}

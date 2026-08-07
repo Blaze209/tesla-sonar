@@ -1,0 +1,11 @@
+package p014n4;
+
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
+
+/* JADX INFO: loaded from: classes.dex */
+public final /* synthetic */ class w0 {
+    public static /* synthetic */ Typeface.Builder a(AssetManager assetManager, String str) {
+        return new Typeface.Builder(assetManager, str);
+    }
+}

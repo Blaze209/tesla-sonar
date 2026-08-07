@@ -1,0 +1,182 @@
+package ch.qos.logback.classic;
+
+import java.io.Serializable;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class Level implements Serializable {
+    public static final int ALL_INT = Integer.MIN_VALUE;
+    public static final int DEBUG_INT = 10000;
+    public static final int ERROR_INT = 40000;
+    public static final int OFF_INT = Integer.MAX_VALUE;
+    public static final int TRACE_INT = 5000;
+    public static final int WARN_INT = 30000;
+    private static final long serialVersionUID = -814092767334282137L;
+    public final int levelInt;
+    public final String levelStr;
+    public static final Integer OFF_INTEGER = Integer.MAX_VALUE;
+    public static final Integer ERROR_INTEGER = 40000;
+    public static final Integer WARN_INTEGER = 30000;
+    public static final int INFO_INT = 20000;
+    public static final Integer INFO_INTEGER = Integer.valueOf(INFO_INT);
+    public static final Integer DEBUG_INTEGER = 10000;
+    public static final Integer TRACE_INTEGER = 5000;
+    public static final Integer ALL_INTEGER = Integer.MIN_VALUE;
+    public static final Level OFF = new Level(Integer.MAX_VALUE, "OFF");
+    public static final Level ERROR = new Level(40000, "ERROR");
+    public static final Level WARN = new Level(30000, "WARN");
+    public static final Level INFO = new Level(INFO_INT, "INFO");
+    public static final Level DEBUG = new Level(10000, "DEBUG");
+    public static final Level TRACE = new Level(5000, "TRACE");
+    public static final Level ALL = new Level(Integer.MIN_VALUE, "ALL");
+
+    private Level(int i11, String str) {
+        this.levelInt = i11;
+        this.levelStr = str;
+    }
+
+    public static Level fromLocationAwareLoggerInteger(int i11) {
+        if (i11 == 0) {
+            return TRACE;
+        }
+        if (i11 == 10) {
+            return DEBUG;
+        }
+        if (i11 == 20) {
+            return INFO;
+        }
+        if (i11 == 30) {
+            return WARN;
+        }
+        if (i11 == 40) {
+            return ERROR;
+        }
+        throw new IllegalArgumentException(i11 + " not a valid level value");
+    }
+
+    private Object readResolve() {
+        return toLevel(this.levelInt);
+    }
+
+    public static Level toLevel(int i11) {
+        return toLevel(i11, DEBUG);
+    }
+
+    public static int toLocationAwareLoggerInteger(Level level) {
+        if (level == null) {
+            throw new IllegalArgumentException("null level parameter is not admitted");
+        }
+        int i11 = level.toInt();
+        if (i11 == 5000) {
+            return 0;
+        }
+        if (i11 == 10000) {
+            return 10;
+        }
+        if (i11 == 20000) {
+            return 20;
+        }
+        if (i11 == 30000) {
+            return 30;
+        }
+        if (i11 == 40000) {
+            return 40;
+        }
+        throw new IllegalArgumentException(level + " not a valid level value");
+    }
+
+    public static Level valueOf(String str) {
+        return toLevel(str, DEBUG);
+    }
+
+    public boolean isGreaterOrEqual(Level level) {
+        return this.levelInt >= level.levelInt;
+    }
+
+    public int toInt() {
+        return this.levelInt;
+    }
+
+    public Integer toInteger() {
+        int i11 = this.levelInt;
+        if (i11 == Integer.MIN_VALUE) {
+            return ALL_INTEGER;
+        }
+        if (i11 == 5000) {
+            return TRACE_INTEGER;
+        }
+        if (i11 == 10000) {
+            return DEBUG_INTEGER;
+        }
+        if (i11 == 20000) {
+            return INFO_INTEGER;
+        }
+        if (i11 == 30000) {
+            return WARN_INTEGER;
+        }
+        if (i11 == 40000) {
+            return ERROR_INTEGER;
+        }
+        if (i11 == Integer.MAX_VALUE) {
+            return OFF_INTEGER;
+        }
+        throw new IllegalStateException("Level " + this.levelStr + ", " + this.levelInt + " is unknown.");
+    }
+
+    public String toString() {
+        return this.levelStr;
+    }
+
+    public static Level toLevel(int i11, Level level) {
+        if (i11 == Integer.MIN_VALUE) {
+            return ALL;
+        }
+        if (i11 == 5000) {
+            return TRACE;
+        }
+        if (i11 == 10000) {
+            return DEBUG;
+        }
+        if (i11 == 20000) {
+            return INFO;
+        }
+        if (i11 == 30000) {
+            return WARN;
+        }
+        if (i11 != 40000) {
+            return i11 != Integer.MAX_VALUE ? level : OFF;
+        }
+        return ERROR;
+    }
+
+    public static Level toLevel(String str) {
+        return toLevel(str, DEBUG);
+    }
+
+    public static Level toLevel(String str, Level level) {
+        if (str != null) {
+            String strTrim = str.trim();
+            if (strTrim.equalsIgnoreCase("ALL")) {
+                return ALL;
+            }
+            if (strTrim.equalsIgnoreCase("TRACE")) {
+                return TRACE;
+            }
+            if (strTrim.equalsIgnoreCase("DEBUG")) {
+                return DEBUG;
+            }
+            if (strTrim.equalsIgnoreCase("INFO")) {
+                return INFO;
+            }
+            if (strTrim.equalsIgnoreCase("WARN")) {
+                return WARN;
+            }
+            if (strTrim.equalsIgnoreCase("ERROR")) {
+                return ERROR;
+            }
+            if (strTrim.equalsIgnoreCase("OFF")) {
+                return OFF;
+            }
+        }
+        return level;
+    }
+}

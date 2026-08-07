@@ -1,0 +1,27 @@
+package org.bouncycastle.pqc.crypto.crystals.kyber;
+
+import java.security.SecureRandom;
+import org.bouncycastle.crypto.EncapsulatedSecretGenerator;
+import org.bouncycastle.crypto.SecretWithEncapsulation;
+import org.bouncycastle.crypto.params.AsymmetricKeyParameter;
+import org.bouncycastle.pqc.crypto.util.SecretWithEncapsulationImpl;
+
+/* JADX INFO: loaded from: classes10.dex */
+public class KyberKEMGenerator implements EncapsulatedSecretGenerator {
+
+    /* JADX INFO: renamed from: sr, reason: collision with root package name */
+    private final SecureRandom f99049sr;
+
+    public KyberKEMGenerator(SecureRandom secureRandom) {
+        this.f99049sr = secureRandom;
+    }
+
+    @Override // org.bouncycastle.crypto.EncapsulatedSecretGenerator
+    public SecretWithEncapsulation generateEncapsulated(AsymmetricKeyParameter asymmetricKeyParameter) {
+        KyberPublicKeyParameters kyberPublicKeyParameters = (KyberPublicKeyParameters) asymmetricKeyParameter;
+        KyberEngine engine = kyberPublicKeyParameters.getParameters().getEngine();
+        engine.init(this.f99049sr);
+        byte[][] bArrKemEncrypt = engine.kemEncrypt(kyberPublicKeyParameters.getEncoded());
+        return new SecretWithEncapsulationImpl(bArrKemEncrypt[0], bArrKemEncrypt[1]);
+    }
+}

@@ -1,0 +1,23 @@
+package p013kotlin.reflect.jvm.internal.impl.descriptors.impl;
+
+import p013kotlin.jvm.internal.s;
+import p013kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor;
+import p013kotlin.reflect.jvm.internal.impl.resolve.scopes.MemberScope;
+import p013kotlin.reflect.jvm.internal.impl.types.TypeSubstitution;
+import p013kotlin.reflect.jvm.internal.impl.types.checker.KotlinTypeRefiner;
+
+/* JADX INFO: loaded from: classes9.dex */
+public final class ModuleAwareClassDescriptorKt {
+    public static final MemberScope getRefinedMemberScopeIfPossible(ClassDescriptor classDescriptor, TypeSubstitution typeSubstitution, KotlinTypeRefiner kotlinTypeRefiner) {
+        s.k(classDescriptor, "<this>");
+        s.k(typeSubstitution, "typeSubstitution");
+        s.k(kotlinTypeRefiner, "kotlinTypeRefiner");
+        return ModuleAwareClassDescriptor.Companion.getRefinedMemberScopeIfPossible$descriptors(classDescriptor, typeSubstitution, kotlinTypeRefiner);
+    }
+
+    public static final MemberScope getRefinedUnsubstitutedMemberScopeIfPossible(ClassDescriptor classDescriptor, KotlinTypeRefiner kotlinTypeRefiner) {
+        s.k(classDescriptor, "<this>");
+        s.k(kotlinTypeRefiner, "kotlinTypeRefiner");
+        return ModuleAwareClassDescriptor.Companion.getRefinedUnsubstitutedMemberScopeIfPossible$descriptors(classDescriptor, kotlinTypeRefiner);
+    }
+}

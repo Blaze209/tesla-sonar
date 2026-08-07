@@ -1,0 +1,51 @@
+package fh0;
+
+import androidx.p003lifecycle.s0;
+import ch.qos.logback.core.rolling.helper.DateTokenConverter;
+import com.fourthline.analytics.internal.AnalyticsAttribute;
+import com.withpersona.sdk2.inquiry.FallbackMode;
+import p013kotlin.Metadata;
+import p013kotlin.jvm.internal.s;
+
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\b\u0001\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0006¢\u0006\u0004\b\b\u0010\tJ\u0017\u0010\r\u001a\u00020\f2\u0006\u0010\u000b\u001a\u00020\nH\u0007¢\u0006\u0004\b\r\u0010\u000eJ\u000f\u0010\u000f\u001a\u00020\u0002H\u0007¢\u0006\u0004\b\u000f\u0010\u0010J\u000f\u0010\u0011\u001a\u00020\u0004H\u0007¢\u0006\u0004\b\u0011\u0010\u0012J\u000f\u0010\u0013\u001a\u00020\u0006H\u0007¢\u0006\u0004\b\u0013\u0010\u0014R\u0014\u0010\u0003\u001a\u00020\u00028\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u0011\u0010\u0015R\u0014\u0010\u0005\u001a\u00020\u00048\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u000f\u0010\u0016R\u0014\u0010\u0007\u001a\u00020\u00068\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\r\u0010\u0017¨\u0006\u0018"}, d2 = {"Lfh0/b;", "", "Lcom/withpersona/sdk2/inquiry/FallbackMode;", "fallbackMode", "Lbh0/f;", AnalyticsAttribute.Environment, "Landroidx/lifecycle/s0;", "savedStateHandle", "<init>", "(Lcom/withpersona/sdk2/inquiry/FallbackMode;Lbh0/f;Landroidx/lifecycle/s0;)V", "Lfh0/h;", "fallbackModeManager", "Lmg0/a;", "c", "(Lfh0/h;)Lmg0/a;", "b", "()Lcom/withpersona/sdk2/inquiry/FallbackMode;", "a", "()Lbh0/f;", DateTokenConverter.CONVERTER_KEY, "()Landroidx/lifecycle/s0;", "Lcom/withpersona/sdk2/inquiry/FallbackMode;", "Lbh0/f;", "Landroidx/lifecycle/s0;", "inquiry-internal_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+public final class b {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name and from kotlin metadata */
+    private final FallbackMode fallbackMode;
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
+    private final bh0.f environment;
+
+    /* JADX INFO: renamed from: c, reason: collision with root package name and from kotlin metadata */
+    private final s0 savedStateHandle;
+
+    public b(FallbackMode fallbackMode, bh0.f environment, s0 savedStateHandle) {
+        s.k(fallbackMode, "fallbackMode");
+        s.k(environment, "environment");
+        s.k(savedStateHandle, "savedStateHandle");
+        this.fallbackMode = fallbackMode;
+        this.environment = environment;
+        this.savedStateHandle = savedStateHandle;
+    }
+
+    /* JADX INFO: renamed from: a, reason: from getter */
+    public final bh0.f getEnvironment() {
+        return this.environment;
+    }
+
+    /* JADX INFO: renamed from: b, reason: from getter */
+    public final FallbackMode getFallbackMode() {
+        return this.fallbackMode;
+    }
+
+    public final mg0.a c(h fallbackModeManager) {
+        s.k(fallbackModeManager, "fallbackModeManager");
+        return fallbackModeManager;
+    }
+
+    /* JADX INFO: renamed from: d, reason: from getter */
+    public final s0 getSavedStateHandle() {
+        return this.savedStateHandle;
+    }
+}

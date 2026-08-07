@@ -1,0 +1,12 @@
+package com.google.android.libraries.places.internal;
+
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzwo extends zzaev implements zzagh {
+    private zzwo() {
+        super(zzwp.zzb);
+    }
+
+    /* synthetic */ zzwo(zzun zzunVar) {
+        super(zzwp.zzb);
+    }
+}

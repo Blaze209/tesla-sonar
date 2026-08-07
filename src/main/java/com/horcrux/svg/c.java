@@ -1,0 +1,42 @@
+package com.horcrux.svg;
+
+import android.annotation.SuppressLint;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import com.facebook.react.bridge.ReactContext;
+
+/* JADX INFO: loaded from: classes6.dex */
+@SuppressLint({"ViewConstructor"})
+class c extends c0 {
+    public c(ReactContext reactContext) {
+        super(reactContext);
+    }
+
+    @Override // com.horcrux.svg.c0, com.horcrux.svg.RenderableView, com.horcrux.svg.VirtualView
+    void draw(Canvas canvas, Paint paint, float f11) {
+        qk.a.I("ReactNative", "RNSVG: ClipPath can't be drawn, it should be defined as a child component for `Defs` ");
+    }
+
+    @Override // com.horcrux.svg.c0, com.horcrux.svg.RenderableView, com.horcrux.svg.VirtualView
+    int hitTest(float[] fArr) {
+        return -1;
+    }
+
+    @Override // com.horcrux.svg.VirtualView
+    boolean isResponsible() {
+        return false;
+    }
+
+    @Override // com.horcrux.svg.RenderableView
+    void mergeProperties(RenderableView renderableView) {
+    }
+
+    @Override // com.horcrux.svg.c0, com.horcrux.svg.RenderableView
+    void resetProperties() {
+    }
+
+    @Override // com.horcrux.svg.c0, com.horcrux.svg.VirtualView
+    void saveDefinition() {
+        getSvgView().defineClipPath(this, this.mName);
+    }
+}

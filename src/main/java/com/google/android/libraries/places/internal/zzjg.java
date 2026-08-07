@@ -1,0 +1,33 @@
+package com.google.android.libraries.places.internal;
+
+import java.io.Serializable;
+import java.util.AbstractSequentialList;
+import java.util.List;
+import java.util.ListIterator;
+
+/* JADX INFO: loaded from: classes5.dex */
+final class zzjg extends AbstractSequentialList implements Serializable {
+    final List zza;
+    final zzce zzb;
+
+    zzjg(List list, zzce zzceVar, byte[] bArr) {
+        list.getClass();
+        this.zza = list;
+        this.zzb = zzceVar;
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final void clear() {
+        this.zza.clear();
+    }
+
+    @Override // java.util.AbstractSequentialList, java.util.AbstractList, java.util.List
+    public final ListIterator listIterator(int i11) {
+        return new zzjf(this, this.zza.listIterator(i11));
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.zza.size();
+    }
+}

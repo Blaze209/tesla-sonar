@@ -1,0 +1,35 @@
+package dl0;
+
+import ch.qos.logback.core.CoreConstants;
+import kotlinx.coroutines.CoroutineExceptionHandler;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.SupervisorKt;
+import p013kotlin.Metadata;
+import p013kotlin.coroutines.AbstractCoroutineContextElement;
+import p013kotlin.coroutines.CoroutineContext;
+
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata(d1 = {"\u0000\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0019\u0010\u0003\u001a\u00020\u00022\n\b\u0002\u0010\u0001\u001a\u0004\u0018\u00010\u0000¢\u0006\u0004\b\u0003\u0010\u0004¨\u0006\u0005"}, d2 = {"Lkotlinx/coroutines/Job;", "parent", "Lkotlin/coroutines/CoroutineContext;", "a", "(Lkotlinx/coroutines/Job;)Lkotlin/coroutines/CoroutineContext;", "ktor-utils"}, k = 2, mv = {1, 8, 0}, xi = 48)
+public final class n {
+    public static final CoroutineContext a(Job job) {
+        return SupervisorKt.SupervisorJob(job).plus(new a(CoroutineExceptionHandler.INSTANCE));
+    }
+
+    public static /* synthetic */ CoroutineContext b(Job job, int i11, Object obj) {
+        if ((i11 & 1) != 0) {
+            job = null;
+        }
+        return a(job);
+    }
+
+    @Metadata(d1 = {"\u0000!\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003*\u0001\u0000\b\n\u0018\u00002\u00020\u00012\u00020\u0002J\u001f\u0010\b\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u0005H\u0016¢\u0006\u0004\b\b\u0010\t¨\u0006\n¸\u0006\u0000"}, d2 = {"kotlinx/coroutines/CoroutineExceptionHandlerKt$CoroutineExceptionHandler$1", "Lkotlin/coroutines/AbstractCoroutineContextElement;", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "Lkotlin/coroutines/CoroutineContext;", CoreConstants.CONTEXT_SCOPE_VALUE, "", "exception", "Ljn0/h0;", "handleException", "(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V", "kotlinx-coroutines-core"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    public static final class a extends AbstractCoroutineContextElement implements CoroutineExceptionHandler {
+        public a(CoroutineExceptionHandler.Companion companion) {
+            super(companion);
+        }
+
+        @Override // kotlinx.coroutines.CoroutineExceptionHandler
+        public void handleException(CoroutineContext context, Throwable exception) {
+        }
+    }
+}

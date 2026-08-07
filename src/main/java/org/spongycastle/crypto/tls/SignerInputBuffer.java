@@ -1,0 +1,14 @@
+package org.spongycastle.crypto.tls;
+
+import java.io.ByteArrayOutputStream;
+import org.spongycastle.crypto.Signer;
+
+/* JADX INFO: loaded from: classes10.dex */
+class SignerInputBuffer extends ByteArrayOutputStream {
+    SignerInputBuffer() {
+    }
+
+    void updateSigner(Signer signer) {
+        signer.update(((ByteArrayOutputStream) this).buf, 0, ((ByteArrayOutputStream) this).count);
+    }
+}

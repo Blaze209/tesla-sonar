@@ -1,0 +1,25 @@
+package expo.modules.kotlin.types;
+
+import expo.modules.kotlin.jni.JavaScriptTypedArray;
+import expo.modules.kotlin.typedarray.TypedArray;
+import p013kotlin.Metadata;
+import p013kotlin.jvm.internal.s;
+
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010\u0007\u001a\u00020\u00022\u0006\u0010\b\u001a\u00020\tH\u0016J\b\u0010\n\u001a\u00020\u0004H\u0016¨\u0006\u000b"}, d2 = {"Lexpo/modules/kotlin/types/TypedArrayTypeConverter;", "Lexpo/modules/kotlin/types/BaseTypeArrayConverter;", "Lexpo/modules/kotlin/typedarray/TypedArray;", "isOptional", "", "<init>", "(Z)V", "wrapJavaScriptTypedArray", "value", "Lexpo/modules/kotlin/jni/JavaScriptTypedArray;", "isTrivial", "expo-modules-core_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+public final class TypedArrayTypeConverter extends BaseTypeArrayConverter<TypedArray> {
+    public TypedArrayTypeConverter(boolean z11) {
+        super(z11);
+    }
+
+    @Override // expo.modules.kotlin.types.BaseTypeArrayConverter, expo.modules.kotlin.types.TypeConverter
+    public boolean isTrivial() {
+        return true;
+    }
+
+    @Override // expo.modules.kotlin.types.BaseTypeArrayConverter
+    public TypedArray wrapJavaScriptTypedArray(JavaScriptTypedArray value) {
+        s.k(value, "value");
+        return value;
+    }
+}

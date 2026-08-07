@@ -1,0 +1,51 @@
+package org.bouncycastle.pqc.legacy.crypto.rainbow;
+
+/* JADX INFO: loaded from: classes10.dex */
+public class RainbowPrivateKeyParameters extends RainbowKeyParameters {
+    private short[][] A1inv;
+    private short[][] A2inv;
+
+    /* JADX INFO: renamed from: b1, reason: collision with root package name */
+    private short[] f99258b1;
+
+    /* JADX INFO: renamed from: b2, reason: collision with root package name */
+    private short[] f99259b2;
+    private Layer[] layers;
+
+    /* JADX INFO: renamed from: vi, reason: collision with root package name */
+    private int[] f99260vi;
+
+    public RainbowPrivateKeyParameters(short[][] sArr, short[] sArr2, short[][] sArr3, short[] sArr4, int[] iArr, Layer[] layerArr) {
+        super(true, iArr[iArr.length - 1] - iArr[0]);
+        this.A1inv = sArr;
+        this.f99258b1 = sArr2;
+        this.A2inv = sArr3;
+        this.f99259b2 = sArr4;
+        this.f99260vi = iArr;
+        this.layers = layerArr;
+    }
+
+    public short[] getB1() {
+        return this.f99258b1;
+    }
+
+    public short[] getB2() {
+        return this.f99259b2;
+    }
+
+    public short[][] getInvA1() {
+        return this.A1inv;
+    }
+
+    public short[][] getInvA2() {
+        return this.A2inv;
+    }
+
+    public Layer[] getLayers() {
+        return this.layers;
+    }
+
+    public int[] getVi() {
+        return this.f99260vi;
+    }
+}

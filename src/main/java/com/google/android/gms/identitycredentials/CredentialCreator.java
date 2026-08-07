@@ -1,0 +1,47 @@
+package com.google.android.gms.identitycredentials;
+
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import androidx.annotation.NonNull;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+
+/* JADX INFO: loaded from: classes5.dex */
+public final class CredentialCreator implements Parcelable.Creator<Credential> {
+    static void writeToParcel(Credential credential, Parcel parcel, int i11) {
+        int iBeginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeString(parcel, 1, credential.getType(), false);
+        SafeParcelWriter.writeBundle(parcel, 2, credential.getData(), false);
+        SafeParcelWriter.finishObjectHeader(parcel, iBeginObjectHeader);
+    }
+
+    /* JADX WARN: Can't rename method to resolve collision */
+    @Override // android.os.Parcelable.Creator
+    @NonNull
+    public Credential createFromParcel(@NonNull Parcel parcel) {
+        int iValidateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        String strCreateString = null;
+        Bundle bundleCreateBundle = null;
+        while (parcel.dataPosition() < iValidateObjectHeader) {
+            int header = SafeParcelReader.readHeader(parcel);
+            int fieldId = SafeParcelReader.getFieldId(header);
+            if (fieldId == 1) {
+                strCreateString = SafeParcelReader.createString(parcel, header);
+            } else if (fieldId != 2) {
+                SafeParcelReader.skipUnknownField(parcel, header);
+            } else {
+                bundleCreateBundle = SafeParcelReader.createBundle(parcel, header);
+            }
+        }
+        SafeParcelReader.ensureAtEnd(parcel, iValidateObjectHeader);
+        return new Credential(strCreateString, bundleCreateBundle);
+    }
+
+    /* JADX WARN: Can't rename method to resolve collision */
+    @Override // android.os.Parcelable.Creator
+    @NonNull
+    public Credential[] newArray(int i11) {
+        return new Credential[i11];
+    }
+}

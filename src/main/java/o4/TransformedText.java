@@ -1,0 +1,50 @@
+package o4;
+
+import ch.qos.logback.core.CoreConstants;
+import p013kotlin.Metadata;
+
+/* JADX INFO: renamed from: o4.x0, reason: from toString */
+/* JADX INFO: loaded from: classes.dex */
+@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\t\b\u0007\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0004¢\u0006\u0004\b\u0006\u0010\u0007J\u001a\u0010\n\u001a\u00020\t2\b\u0010\b\u001a\u0004\u0018\u00010\u0001H\u0096\u0002¢\u0006\u0004\b\n\u0010\u000bJ\u000f\u0010\r\u001a\u00020\fH\u0016¢\u0006\u0004\b\r\u0010\u000eJ\u000f\u0010\u0010\u001a\u00020\u000fH\u0016¢\u0006\u0004\b\u0010\u0010\u0011R\u0017\u0010\u0003\u001a\u00020\u00028\u0006¢\u0006\f\n\u0004\b\u0012\u0010\u0013\u001a\u0004\b\u0014\u0010\u0015R\u0017\u0010\u0005\u001a\u00020\u00048\u0006¢\u0006\f\n\u0004\b\u0014\u0010\u0016\u001a\u0004\b\u0012\u0010\u0017¨\u0006\u0018"}, d2 = {"Lo4/x0;", "", "Li4/d;", "text", "Lo4/f0;", "offsetMapping", "<init>", "(Li4/d;Lo4/f0;)V", "other", "", "equals", "(Ljava/lang/Object;)Z", "", "hashCode", "()I", "", "toString", "()Ljava/lang/String;", "a", "Li4/d;", "b", "()Li4/d;", "Lo4/f0;", "()Lo4/f0;", "ui-text_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+public final class TransformedText {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name and from kotlin metadata and from toString */
+    private final i4.d text;
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata and from toString */
+    private final f0 offsetMapping;
+
+    public TransformedText(i4.d dVar, f0 f0Var) {
+        this.text = dVar;
+        this.offsetMapping = f0Var;
+    }
+
+    /* JADX INFO: renamed from: a, reason: from getter */
+    public final f0 getOffsetMapping() {
+        return this.offsetMapping;
+    }
+
+    /* JADX INFO: renamed from: b, reason: from getter */
+    public final i4.d getText() {
+        return this.text;
+    }
+
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof TransformedText)) {
+            return false;
+        }
+        TransformedText transformedText = (TransformedText) other;
+        return p013kotlin.jvm.internal.s.f(this.text, transformedText.text) && p013kotlin.jvm.internal.s.f(this.offsetMapping, transformedText.offsetMapping);
+    }
+
+    public int hashCode() {
+        return (this.text.hashCode() * 31) + this.offsetMapping.hashCode();
+    }
+
+    public String toString() {
+        return "TransformedText(text=" + ((Object) this.text) + ", offsetMapping=" + this.offsetMapping + CoreConstants.RIGHT_PARENTHESIS_CHAR;
+    }
+}
