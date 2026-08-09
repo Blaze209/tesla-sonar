@@ -1,51 +1,41 @@
 package ch.qos.logback.classic.net.server;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
-import ch.qos.logback.classic.spi.ClassPackagingData;
-import ch.qos.logback.classic.spi.IThrowableProxy;
-import ch.qos.logback.classic.spi.LoggerContextVO;
-import ch.qos.logback.classic.spi.LoggerRemoteView;
-import ch.qos.logback.classic.spi.LoggingEventVO;
-import ch.qos.logback.classic.spi.StackTraceElementProxy;
-import ch.qos.logback.classic.spi.ThrowableProxy;
-import ch.qos.logback.classic.spi.ThrowableProxyVO;
 import ch.qos.logback.core.net.HardenedObjectInputStream;
 import java.io.InputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.slf4j.helpers.BasicMarker;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class HardenedLoggingEventInputStream extends HardenedObjectInputStream {
     static final String ARRAY_PREFIX = "[L";
 
-    public HardenedLoggingEventInputStream(InputStream inputStream) {
+    public HardenedLoggingEventInputStream(InputStream inputStream) throws IOException {
         super(inputStream, getWhilelist());
     }
 
     public static List<String> getWhilelist() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(LoggingEventVO.class.getName());
-        arrayList.add(LoggerContextVO.class.getName());
-        arrayList.add(LoggerRemoteView.class.getName());
-        arrayList.add(ThrowableProxyVO.class.getName());
-        arrayList.add(BasicMarker.class.getName());
-        arrayList.add(Level.class.getName());
-        arrayList.add(Logger.class.getName());
-        arrayList.add(StackTraceElement.class.getName());
-        arrayList.add(StackTraceElement[].class.getName());
-        arrayList.add(ThrowableProxy.class.getName());
-        arrayList.add(ThrowableProxy[].class.getName());
-        arrayList.add(IThrowableProxy.class.getName());
-        arrayList.add(IThrowableProxy[].class.getName());
-        arrayList.add(StackTraceElementProxy.class.getName());
-        arrayList.add(StackTraceElementProxy[].class.getName());
-        arrayList.add(ClassPackagingData.class.getName());
+        arrayList.add("ch.qos.logback.classic.spi.LoggingEventVO");
+        arrayList.add("ch.qos.logback.classic.spi.LoggerContextVO");
+        arrayList.add("ch.qos.logback.classic.spi.LoggerRemoteView");
+        arrayList.add("ch.qos.logback.classic.spi.ThrowableProxyVO");
+        arrayList.add("org.slf4j.helpers.BasicMarker");
+        arrayList.add("ch.qos.logback.classic.Level");
+        arrayList.add("ch.qos.logback.classic.Logger");
+        arrayList.add("java.lang.StackTraceElement");
+        arrayList.add("[Ljava.lang.StackTraceElement;");
+        arrayList.add("ch.qos.logback.classic.spi.ThrowableProxy");
+        arrayList.add("[Lch.qos.logback.classic.spi.ThrowableProxy;");
+        arrayList.add("ch.qos.logback.classic.spi.IThrowableProxy");
+        arrayList.add("[Lch.qos.logback.classic.spi.IThrowableProxy;");
+        arrayList.add("ch.qos.logback.classic.spi.StackTraceElementProxy");
+        arrayList.add("[Lch.qos.logback.classic.spi.StackTraceElementProxy;");
+        arrayList.add("ch.qos.logback.classic.spi.ClassPackagingData");
         return arrayList;
     }
 
-    public HardenedLoggingEventInputStream(InputStream inputStream, List<String> list) {
+    public HardenedLoggingEventInputStream(InputStream inputStream, List<String> list) throws IOException {
         this(inputStream);
         super.addToWhitelist(list);
     }

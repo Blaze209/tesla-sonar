@@ -93,6 +93,16 @@
           <source>11</source>
           <target>11</target>
           <encoding>UTF-8</encoding>
+          <includes>
+            <include>ch/qos/logback/**/*.java</include>
+            <include>org/slf4j/**/*.java</include>
+          </includes>
+          <excludes>
+            <exclude>ch/qos/logback/classic/android/**/*.java</exclude>
+            <exclude>ch/qos/logback/core/android/**/*.java</exclude>
+            <exclude>ch/qos/logback/core/joran/action/PropertyAction.java</exclude>
+            <exclude>ch/qos/logback/core/joran/action/AbstractIncludeAction.java</exclude>
+          </excludes>
         </configuration>
       </plugin>
     </plugins>
