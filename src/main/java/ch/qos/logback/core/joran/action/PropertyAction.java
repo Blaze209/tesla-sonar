@@ -4,7 +4,6 @@ import ch.qos.logback.core.joran.spi.InterpretationContext;
 import ch.qos.logback.core.pattern.util.RegularEscapeUtil;
 import ch.qos.logback.core.util.Loader;
 import ch.qos.logback.core.util.OptionHelper;
-import com.google.firebase.perf.network.FirebasePerfUrlConnection;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -53,7 +52,7 @@ public class PropertyAction extends Action {
                 return;
             }
             try {
-                loadAndSetProperties(interpretationContext, FirebasePerfUrlConnection.openStream(resourceBySelfClassLoader), scopeStringToScope);
+                loadAndSetProperties(interpretationContext, resourceBySelfClassLoader.openStream(), scopeStringToScope);
                 return;
             } catch (IOException e11) {
                 e = e11;

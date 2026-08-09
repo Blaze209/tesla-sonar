@@ -4,7 +4,6 @@ import ch.qos.logback.core.joran.spi.InterpretationContext;
 import ch.qos.logback.core.joran.spi.JoranException;
 import ch.qos.logback.core.util.Loader;
 import ch.qos.logback.core.util.OptionHelper;
-import com.google.firebase.perf.network.FirebasePerfUrlConnection;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,7 +27,7 @@ public abstract class AbstractIncludeAction extends Action {
         String str2;
         try {
             URL url = new URL(str);
-            FirebasePerfUrlConnection.openStream(url).close();
+            url.openStream().close();
             return url;
         } catch (MalformedURLException e11) {
             e = e11;
