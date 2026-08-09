@@ -28,7 +28,7 @@ class RemoteAppenderStreamClient implements RemoteAppenderClient {
         this.inputStream = inputStream;
     }
 
-    private HardenedObjectInputStream createObjectInputStream() {
+    private HardenedObjectInputStream createObjectInputStream() throws IOException {
         return this.inputStream != null ? new HardenedLoggingEventInputStream(this.inputStream) : new HardenedLoggingEventInputStream(this.socket.getInputStream());
     }
 

@@ -19,6 +19,7 @@
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.projectKey>blaze209_t1test</sonar.projectKey>
     <sonar.sources>src/main/java</sonar.sources>
+    <sonar.inclusions>ch/qos/logback/**/*.java,org/slf4j/**/*.java</sonar.inclusions>
     <sonar.java.binaries>target/classes</sonar.java.binaries>
     <sonar.exclusions>
       **/androidx/**/*,
@@ -93,6 +94,14 @@
           <source>11</source>
           <target>11</target>
           <encoding>UTF-8</encoding>
+          <includes>
+            <include>ch/qos/logback/**/*.java</include>
+            <include>org/slf4j/**/*.java</include>
+          </includes>
+          <excludes>
+            <exclude>ch/qos/logback/classic/android/**/*.java</exclude>
+            <exclude>ch/qos/logback/core/android/**/*.java</exclude>
+          </excludes>
         </configuration>
       </plugin>
     </plugins>
